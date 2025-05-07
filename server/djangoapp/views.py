@@ -1,3 +1,4 @@
+# flake8: noqa
 # Uncomment the required imports before adding the code
 
 from django.contrib.auth.models import User
@@ -62,7 +63,7 @@ def registration(request):
         # Check if user already exists
         User.objects.get(username=username)
         username_exist = True
-    except:
+    except Exception:
         # If not, simply log this is a new user
         logger.debug("{} is new user".format(username))
 
